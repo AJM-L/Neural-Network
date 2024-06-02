@@ -89,8 +89,8 @@ show_images(images_2_show, titles_2_show)
 
 # Trains a Network with two hidden layers of 200 and 80 nodes respectively fro 10 epochs
 # Network can be called successively with MyNet variable 
-# Usually yields around 50% accuracy with this setup (random would yield about 10% accuracy).
+# Usually yields around 75% accuracy with this setup (random would yield about 10% accuracy).
 # Accuracy can go much higher with necassary computational power. The best I have gotten was around 95%.
 MyNet = Network([784, 200, 80, 10])
-MyNet.SGD(list(zip(x_train, y_train)), 10, 100, 0.5)
+MyNet.SGD(list(zip(x_train, y_train)), 10, 100, 1.5)
 print("Network classfied Mnist set at " + str(MyNet.evaluate(list(zip(x_test, y_test)))) + "% accuracy.")
